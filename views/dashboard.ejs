@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Dashboard — PostoQue</title>
+<meta name="description" content="PostoQue feature preview dashboard.">
+<%- include('partials/head') %>
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <main class="dash wrap">
+    <div class="dash-head">
+      <div>
+        <h1>Welcome back.</h1>
+        <p>Here's a preview of every module landing in PostoQue. Everything below is under active development.</p>
+      </div>
+      <div class="user-pill">
+        <span class="avatar"><%= user.email.charAt(0).toUpperCase() %></span>
+        <span><%= user.email %></span>
+      </div>
+    </div>
+
+    <div class="module-grid">
+      <% modules.forEach(function(m) { %>
+        <div class="module-card">
+          <div class="m-icon"><%= m.key.replace('Que','').slice(0,2).toUpperCase() %></div>
+          <h3><%= m.key %></h3>
+          <p><%= m.desc %></p>
+          <span class="badge">Coming soon</span>
+        </div>
+      <% }); %>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+
+</body>
+</html>

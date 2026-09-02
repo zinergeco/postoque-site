@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>PostoQue — One queue for every brand, every channel</title>
+<meta name="description" content="PostoQue is a self-hosted content operations engine — plan, create, approve and publish across social, email and your website from one queue.">
+<%- include('partials/head') %>
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <main class="hero wrap">
+    <div class="stage">
+      <span class="eyebrow"><i></i> Building in public — private preview live</span>
+
+      <h1>One queue for every<br>brand, every channel, <em>done</em>.</h1>
+
+      <p class="lead">
+        PostoQue plans, drafts and publishes your content across social, email and your own
+        website — from one dashboard, one approval queue, one Claude conversation. Point it at a
+        spreadsheet of raw ideas and images, and it hands back ready-to-approve posts.
+      </p>
+
+      <div class="chips">
+        <div class="chip"><b>Social</b> — 9 networks</div>
+        <div class="chip"><b>Email</b> — full marketing automation</div>
+        <div class="chip"><b>Blog</b> — your website, drafted &amp; published</div>
+        <div class="chip"><b>Claude</b> — wired into the middle of it</div>
+      </div>
+
+      <div class="cta">
+        <% if (user) { %>
+          <a class="btn pri" href="/dashboard">Go to dashboard</a>
+        <% } else { %>
+          <a class="btn pri" href="/login">Preview the product</a>
+          <a class="btn gho" href="mailto:zinergeco@gmail.com?subject=PostoQue%20early%20access">Get early access</a>
+        <% } %>
+      </div>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+
+</body>
+</html>

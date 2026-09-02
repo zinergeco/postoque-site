@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+<title>Login — PostoQue</title>
+<meta name="description" content="Log in to preview PostoQue.">
+<%- include('partials/head') %>
+</head>
+<body>
+
+  <%- include('partials/header') %>
+
+  <main class="auth wrap-narrow">
+    <div class="auth-card">
+      <a class="back-link" href="/">&larr; Back to home</a>
+      <h2>Welcome back</h2>
+      <p class="sub">Log in to preview the PostoQue feature set.</p>
+
+      <% if (error) { %>
+        <div class="error-box">That email or password isn't right. Try again.</div>
+      <% } %>
+
+      <form action="/login" method="POST" autocomplete="on">
+        <div class="field">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required autofocus>
+        </div>
+        <div class="field">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" placeholder="••••••••" required>
+        </div>
+        <button class="btn pri block" type="submit">Log in</button>
+      </form>
+
+      <div class="hint-box">
+        <b>Demo access:</b> this is a private preview. If you don't have credentials, email
+        <a href="mailto:zinergeco@gmail.com">zinergeco@gmail.com</a> for access.
+      </div>
+    </div>
+  </main>
+
+  <%- include('partials/footer') %>
+
+</body>
+</html>
