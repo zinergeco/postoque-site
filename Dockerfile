@@ -1,6 +1,13 @@
-FROM nginx:alpine
+FROM node:20-alpine
 
-# Single static "coming soon" page for postoque.com.
-COPY index.html /usr/share/nginx/html/index.html
+WORKDIR /app
 
-EXPOSE 80
+COPY package*.json ./
+RUN npm install --omit=dev
+
+COPY . .
+
+ENV PORT=3000
+EXPOSE 3000
+
+CMD ["node", "server.js"]
